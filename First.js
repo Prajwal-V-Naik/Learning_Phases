@@ -97,3 +97,52 @@
 // let addCorrect = [2,4,6];
 // addCorrect.push(8);
 // console.log(addCorrect);//Output:-[ 2, 4, 6, 8 ]
+
+// reverse()
+// let re_order = ['challenge','love','I']
+// let order = re_order.reverse();
+// console.log(order);//Output:[ 'I', 'love', 'challenge' ]
+// console.log(order.join(' ')); //Output: I love challenge
+
+// Shift()
+// let even = [1,2,3,4];
+// console.log(even.length);//Output:4
+// console.log(even.shift());//Output:1
+// console.log(even.length);//Output:3
+
+// slice()
+// let you = ['have','write','and','submit','a','JS-Arraylength','finding','code'];
+// console.log(you.slice(1,4));//Output:- [ 'write', 'and', 'submit' ]
+// console.log(you.slice(1));//Output:- [ 'write', 'and', 'submit', 'a', 'JS-Arraylength', 'finding', 'code' ]
+
+// sort()
+// let sorting = ['r','j','a','i','b'];
+// console.log(sorting.sort());//Output:- [ 'a', 'b', 'i', 'j', 'r' ]
+
+// splice()
+// let replace = ['a','e','b','o','u'];
+// let replaced = replace.splice(2,1,'i');
+// console.log(replace);//Output:[ 'a', 'e', 'i', 'o', 'u' ]
+
+// toString()
+// let you = ['Have','to','write','and','submit','a','JS-Arraylength','finding','code',1,2,3,4,5,6];
+// console.log(you.toString());//Output:- Have,to,write,and,submit,a,JS-Arraylength,finding,code,1,2,3,4,5,6
+
+// unshift()
+// let k = [1,2,3,4,5];
+// console.log(k.length);//Output:- 5
+// k.unshift(6,7,8);
+// console.log(k.length);//Output:- 8
+
+// values()
+// let vowels = ['a','e','i','o','u'];
+// let Arrays = vowels.values();
+// for (let values of Arrays){
+//     console.log(values);
+// }
+// Output:-
+// a
+// e
+// i
+// o
+// u
