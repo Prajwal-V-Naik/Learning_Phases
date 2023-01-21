@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .maindiv {
+        width: 100vw;
+        height: 100vh;
+        background-color: #4682b4;
+      }
+      .magicDiv {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: whitesmoke;
+        border-radius: 50%;
+        z-index: 1;
+        transition: all 0.8s;
+        transform: scale(0);
+      }
+    </style>
+    <title>Mouse Event</title>
+  </head>
+  <body>
+    <div id="mainDiv" class="maindiv" onclick="alertMessage()"></div>
+  </body>
+  <script>
+    function alertMessage() {
+  addEventListener("click", function (e) {
+    console.log(e.clientX, e.clientY);
+    const mainDiv = document.getElementById("mainDiv");
+    const magicDiv = document.createElement("div");
+    magicDiv.classList.add("magicDiv");
+    magicDiv.style.top = e.clientY - 25 + "px";
+    magicDiv.style.left = e.clientX - 25 + "px";
+
+    mainDiv.appendChild(magicDiv);
+    setTimeout(() => {
+      magicDiv.style.transform = "scale(1)";
+    }, 100);
+    setTimeout(() => {
+      mainDiv.removeChild(magicDiv);
+    }, 1000);
+  });
+}
+  </script>
+</html>
