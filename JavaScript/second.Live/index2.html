@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello JavaScript Boot-camp</h1>
+    <ul>
+        
+    </ul>
+    <button id="cli" onclick="cli()">Submit</button>
+    <p id="js"></p>
+    <script>
+        // Button click or click event
+        function cli(){
+            let value = prompt("Solve 50-30");
+            if(value == 20){
+                document.getElementById('js').innerText = 'Success';
+                document.getElementById('cli').style.backgroundColor = "green";
+
+            }
+            else{
+                document.getElementById('js').innerText = 'Fail';
+                document.getElementById('cli').style.backgroundColor = "red";
+            }
+        }
+
+
+
+
+        // Inserting element or inner HTML
+        const list =`
+            <li>P</li>
+            <li>J</li>
+            <li>L</li>
+            <li>L</li>
+            <li>L</li>
+            <li>L</li>
+            <li>L</li>
+        `;
+       const ul = document.querySelector('ul');
+       ul.innerHTML = list;
+    
+        //  Creating element on desktop
+        const h1 = document.createElement('h1');
+        h1.className = 'head';
+        h1.style.fontSize = '25px';
+        h1.style.color = "green";
+        h1.style.textTransform = 'uppercase';
+        h1.textContent = "heading of this page";
+        // Appending all above to body
+        document.body.appendChild(h1);
+        // Removing a h1 from body
+        document.body.removeChild(document.querySelector('h1'));
+
+
+        // For loop
+        for(let i = 0; i < 3 ; i++){
+            let para  = document.createElement('p');
+            para.className = 'FSJS';
+            para.style.fontSize = '1rem';
+            para.textContent = i;
+            document.body.appendChild(para);
+        } 
+        
+        
+        
+
+        </script>
+</body>
+</html>
