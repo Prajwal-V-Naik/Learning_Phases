@@ -22,21 +22,25 @@
     <h1>Right click , inspect, and go to CONSOLE</h1>
 </body>
 <script>
-    
-    // Declaring variable
-    var fullName = "Prajwal V Naik";
-    const DOB = '04-01-2001';
-    let age = 22;
+   
+//  Sign Up page using console log
+const uid = "Pjval345";
+var fullName = "Prajwal V Naik";
+var email = "prajwal@gmail.com";
+var password = "1234";
+var confirmPassword = "1234";
+var courseCount = 0;
+var isLoggedInFromGoogle = false;
 
-    console.log(`Hey my Name is ${fullName} and i'm born on ${DOB}, a ${age} old boy`);
+// Interpolation
+console.log(`
+    Your id: ${uid}
+    User name: ${fullName}
+    email: ${email}
+    course: ${courseCount}
+    GoogleLogin: ${isLoggedInFromGoogle}
+`);
 
-    // Data type
-    var name = "LCO"; // string
-    var islogin = true; // Boolean
-    var number = 3; // number 
-    var paid ; // undefined 
 
-    console.log(name + islogin + number);
-    console.log(paid);
 </script>
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1{
+            font-size: 4rem;
+            text-align: center;
+        }
+    </style>
+    <title>JavaScript TUT</title>
+</head>
+<body>
+    <h1>Right click , inspect, and go to CONSOLE</h1>
+</body>
+<script>
+   
+// Operators Session
+// Basics(+ - * /)
+var n1 = 1;
+var n2 = 4;
+console.log(n1 + n2); // Add
+console.log(n1 * n2); // Multiply
+console.log(n1 - n2); // Subtraction
+console.log(n1 / n2); // division
+
+// Boolean(< <= => >)
+console.log(n1 < n2); // true or false
+console.log(n1 <= n2); // true or false
+console.log(n1==n2); // true or false
+console.log(n1 > n2); // true or false
+
+// Use case scenarios(a small console project)
+var sellingPrice = 599;
+var listingPrice = 899;
+var discountPercent = ((listingPrice - sellingPrice)/ listingPrice) * 100
+console.log(
+    "Discount Percentage is " + Math.round(discountPercent) + "% off"
+)
+
+// typeOf operator
+var bo = false;
+console.log(typeof(bo));
+console.log(typeof(sellingPrice));
+
+</script>
+</html>
