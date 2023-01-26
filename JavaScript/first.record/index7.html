@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1{
+            font-size: 4rem;
+            text-align: center;
+        }
+    </style>
+    <title>JavaScript TUT</title>
+</head>
+<body>
+    <h1>Right click , inspect, and go to CONSOLE</h1>
+</body>
+<script>
+    // Logical Conditional Login in javaScript
+    var email = true;
+    var facebook =  false;
+    var google = false;
+
+    // if (email){
+    //     console.log("LOgin success")
+    // }
+    // if (facebook){
+    //     console.log("LOgin success")
+    // }
+    // if (google){
+    //     console.log("LOgin success")
+    // }
+
+// All above if are done singly through
+
+if(email||facebook||google){
+    console.log("LOgin success");
+}
+// and also through & logic
+if(email&&facebook&&google){
+    console.log("LOgin success");
+}
+else{
+    console.log("Only one way");
+}
+
+</script>
+</html>
