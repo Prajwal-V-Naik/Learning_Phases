@@ -6,31 +6,31 @@
 // Example
 
 // Spread use case
-// function sumone(x,y){
-//     return x + y;
-// }
-// let vari = [5,7];
-// console.log(sumone(...vari)); // Spread sends all data to method here
+function sumone(x,y){
+    return x + y;
+}
+let vari = [5,7];
+console.log(sumone(...vari)); // Spread sends all data to method here
 
 // Rest use case
-// function sum(...args){ // Rest accumulate all data taken
-//     console.log(args); 
-//     let sum = 0;
-//     for(const x of args){
-//         sum = sum + x;
-//     }
-//     return sum;
-// }
+function sum(...args){ // Rest accumulate all data taken
+    console.log(args); 
+    let sum = 0;
+    for(const x of args){
+        sum = sum + x;
+    }
+    return sum;
+}
 
-// console.log(sum(1,2,4,5,6,7,43,3,5,5,4,74,5,7,5,3,7,6,5,4,6,7,5,4,5,5));
+console.log(sum(1,2,4,5,6,7,43,3,5,5,4,74,5,7,5,3,7,6,5,4,6,7,5,4,5,5));
 
 
 // Try and Catch
-// try{
-//     console.log(first);
-// }catch (err){
-//     console.error(err.name);
-// }
+try{
+    console.log(first);
+}catch (err){
+    console.error(err.name);
+}
 
 
 // Different types of errors 
@@ -63,3 +63,4 @@ const userThree = () => {
 userOne();
 userTwo();
 userThree();
+
