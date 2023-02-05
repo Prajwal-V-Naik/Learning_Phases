@@ -24,3 +24,61 @@
 //     sub();
 // }
 // sum();
+
+// 
+let sum = () =>{
+    let a = 10;
+    let sub = (parameter) =>{
+        let c = parameter + a;
+        let result = () =>{
+            console.log(c);
+        }
+        result();
+    }
+    sub(a);
+}
+sum();
+
+// Callback: a function which can act as parameter to other function.
+const arr = [
+    "Shive",
+    "male",
+    "Gun",
+    "hun",
+    "sun",
+    "done"
+];
+const arr2 = new Array;
+arr.forEach((e)=>{
+    arr2.push(e);
+});
+console.log(arr2);
+
+const arr3 = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+]
+
+const num = arr3.map((e)=>{
+    return (e-(e*(e+e+e/e)/e))+e;
+    });
+console.log(arr3);
+console.log(num);
+
+const world =[
+    "ind",
+    "usa",
+    "tsa",
+    "can",
+    "jpn"
+];
+const count = world.filter((world)=> world.includes("a"));
+console.log(world.pop(count));
+
