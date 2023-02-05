@@ -1,4 +1,4 @@
-// Some concept about hosting. 
+// Some concept about hoisting. 
 
 tipper("80");
 function tipper(a){
