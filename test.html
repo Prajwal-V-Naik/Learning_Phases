@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: gray;
+        }
+        .material-symbols-outlined {
+            position: fixed;
+            top: 50%;
+            right: 1%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            align-items: center;
+            border-radius: 50%;
+            padding: .5rem;
+            width: 2rem;
+            height: 2rem;
+        }
+         /* Other styles */
+  @keyframes fadeOutLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeOutRight {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+        @media only screen and (min-width: 2000px) and (max-width: 736px) {
+            .material-symbols-outlined {
+                position: absolute;
+                right: 50%;
+                top: 50%;
+                transform: translate(50%, -50%);
+            }
+        }
+
+    </style>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Test</title>
+</head>
+<body>
+    <ion-icon name="grid-outline" class="material-symbols-outlined"></ion-icon>
+    <script>
+const menuIcon = document.querySelector('.material-symbols-outlined');
+const dropdown = document.createElement('div');
+
+dropdown.style.display = 'none';
+dropdown.innerHTML = `
+  <ul>
+    <li><ion-icon name="compass-outline"></ion-icon></li>
+    <li><ion-icon name="newspaper-outline"></ion-icon></li>
+    <li><ion-icon name="git-network-outline"></ion-icon></li>
+    <li><ion-icon name="call-outline"></ion-icon></li>
+  </ul>
+`;
+
+document.body.appendChild(dropdown);
+
+
+
+const dropdownList = dropdown.querySelector('ul');
+dropdownList.style.listStyle = 'none';
+dropdownList.style.display = "flex";
+dropdownList.style.flexDirection = "column";
+dropdownList.style.gap="10px";
+dropdownList.style.padding = 0;
+dropdownList.style.position = 'fixed';
+dropdownList.style.top = '39%';
+dropdownList.style.right = '5%';
+dropdownList.style.transform = 'scale(0)';
+dropdownList.style.transformOrigin = 'bottom right';
+dropdownList.style.transition = 'transform 0.3s ease-in-out';
+
+const dropdownItems = dropdownList.querySelectorAll('li');
+// dropdownList.style.opacity = 0;
+// dropdownList.style.animation = 'fadeOutRight 0.5s';
+// dropdownList.style.animationFillMode = 'forwards';
+let isDropdownOpen = false;
+dropdownItems.forEach((item,index) => {
+  item.style.backgroundColor = 'white';
+  item.style.color = 'black';
+  item.style.width = '2rem';
+  item.style.height = '2rem';
+  item.style.fontSize = '2rem';
+//   padding: .5rem;
+//             width: 2rem;
+//             height: 2rem;
+  item.style.padding = '.5rem';
+  item.style.borderRadius = '50%';
+  item.style.textAlign = 'center';
+  item.style.cursor = 'pointer';
+//   item.style.display = 'inline-block';
+  item.style.margin = '0 10px 10px 0';
+//   item.style.transition = 'all 0.5s';
+// item.style.animationFillMode = 'forwards';
+//   item.style.animationDuration = '0.5s';
+//   item.style.animationTimingFunction = 'ease-in-out';
+  if (index === 0 || index === dropdownItems.length - 1) {
+    item.style.marginRight = '-22px';
+    item.style.marginLeft = '22px';
+    item.style.backgroundColor = 'black';
+    item.style.color = 'white';
+  }
+});
+
+menuIcon.addEventListener('click', function() {
+  if (dropdown.style.display === 'none') {
+    dropdownList.style.transform = 'scale(1)';
+    dropdown.style.display = 'block';
+    // dropdownList.style.animation = 'fadeOutRight 0.5s';
+  } else {
+    dropdownList.style.transform = 'scale(0)';
+    dropdown.style.display = 'none';
+    // dropdownList.style.animation = 'fadeOutLeft 0.5s';
+
+  }
+//   if (isDropdownOpen) {
+//     // dropdownList.style.opacity = 0;
+//     // dropdownList.style.transform = 'translateX(100%)';
+//     isDropdownOpen = false;
+//   } else {
+//     dropdownList.style.opacity = 1;
+//     dropdownList.style.transform = 'translateX(0)';
+//     isDropdownOpen = true;
+//   }
+// if (isDropdownOpen) {
+//     dropdownList.style.animation = 'fadeOutRight 0.5s';
+//     isDropdownOpen = false;
+//   } else {
+//     dropdownList.style.animation = 'fadeOutLeft 0.5s';
+//     isDropdownOpen = true;
+//   }
+});
+
+
+
+    </script>
+</body>
+</html>

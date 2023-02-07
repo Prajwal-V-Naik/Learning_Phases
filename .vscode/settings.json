@@ -13,6 +13,8 @@
         "Naik",
         "Neuoron",
         "numsqu",
+        "opsz",
+        "pajju",
         "Pjval",
         "signout",
         "subadmin",
@@ -20,7 +22,8 @@
         "testrep",
         "Thrustahead",
         "undifined",
-        "vari"
+        "vari",
+        "wght"
     ],
     "liveServer.settings.port": 5501
 }
