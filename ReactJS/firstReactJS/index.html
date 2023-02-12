@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <div class="root">Not Rendering</div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const rootElement = document.querySelector(".root");
+        const css = {
+            border : "2px solid pink",
+            backgroundColor:"yellow",
+            height : "20vh",
+            
+        };
+        const header = (
+            <>
+                <header>
+                <h1>Hello Sir</h1>
+                </header>
+            </>
+        );
+        const main = (
+            <main style={css}>
+                <p>Lorem ipsum dolor sit ament consenter adipisicing elite. Hic presenting quia laudanum sapient. sung. Ut inventors delegati laborer placet rem, option ecus minima, at amen vitae, fugal nunquam aut quash.</p>
+                <p>Lorem ipsum dolor sit amen consenter adipisicing el.it. quid's cum aligned illume possums dolorous, vitae officio repudiate nescient site rationed quam doloremque ex.recitation's vulgate! Error, nostrum? Magna dubious beaten temporizes.</p>
+            </main>
+        );
+        const foot = (
+            <footer>
+                <p>Lorem ipsum dolor sit</p>
+            </footer>
+        );
+
+        const app = (
+            <>
+            {header}
+            {main}
+            {main}
+            {main}
+            {main}
+            {main}
+            {main}
+            {main}
+            {main}
+            {main}
+            {foot}
+            </>
+        );
+
+        ReactDOM.render(app , rootElement);
+
+    </script>
+</body>
+</html>
