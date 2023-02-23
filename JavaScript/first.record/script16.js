@@ -62,3 +62,17 @@ let first = "PPPPP";  this is going to gave a actual error which is happened bef
 
 
 // Destructure The Data
+// for Array
+const user = ["Prajwal",8,"good"];
+var [name,count,feel] = user;
+console.log(count); // It gives 8 as answer by calling similar to both left hand and right hand side of array.
+
+// For Object
+const log = {
+    userName: "you",
+    logCount: 6,
+    feels: "okay"
+}
+
+var {userName,logCount,feels}=log;
+console.log(feels);// In object while destructuring the data the object name should be match with the created variable 
