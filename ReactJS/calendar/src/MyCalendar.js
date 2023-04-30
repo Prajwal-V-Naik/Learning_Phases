@@ -7,6 +7,8 @@ const MyCalendar = () => {
   const [calendarDate, changeCalendarDate] = useState(new Date());
   const [showInput, setShowInput] = useState(false);
   const [inputValue, setInputValue] = useState('');
+  const [showResult, setShowResult] = useState(false);
+  const [resultValue, setResultValue] = useState('');
 
   const handleCalendarClick = (value) => {
     changeCalendarDate(value);
@@ -14,11 +16,13 @@ const MyCalendar = () => {
   };
 
   const handleSaveClick = () => {
-    // Do something with inputValue
+    // Store selected date and input value
+    setResultValue(`${calendarDate.toLocaleDateString('en-GB')} - ${inputValue}`);
     setShowInput(false);
     setInputValue('');
+    setShowResult(true);
   };
-
+   const placeholderDate = calendarDate.toLocaleDateString('en-GB');
   return (
     <div className="flex flex-col items-center justify-center">
       <Calendar
@@ -31,7 +35,7 @@ const MyCalendar = () => {
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder={`You clicked ${calendarDate.toLocaleDateString()}`}
+            placeholder={`You clicked ${placeholderDate}`}
             className="border border-gray-300 p-2 rounded-md flex-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
           <button
@@ -40,6 +44,11 @@ const MyCalendar = () => {
           >
             Save
           </button>
+        </div>
+      )}
+      {showResult && (
+        <div className="mt-4">
+          <h3>{resultValue}</h3>
         </div>
       )}
     </div>
