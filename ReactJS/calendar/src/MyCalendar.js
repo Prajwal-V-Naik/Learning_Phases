@@ -7,8 +7,7 @@ const MyCalendar = () => {
   const [calendarDate, changeCalendarDate] = useState(new Date());
   const [showInput, setShowInput] = useState(false);
   const [inputValue, setInputValue] = useState('');
-  const [showResult, setShowResult] = useState(false);
-  const [resultValue, setResultValue] = useState('');
+  const [savedValues, setSavedValues] = useState([]);
 
   const handleCalendarClick = (value) => {
     changeCalendarDate(value);
@@ -16,18 +15,24 @@ const MyCalendar = () => {
   };
 
   const handleSaveClick = () => {
-    // Store selected date and input value
-    setResultValue(`${calendarDate.toLocaleDateString('en-GB')} - ${inputValue}`);
+    const newValue = { date: calendarDate.toLocaleDateString('en-GB'), text: inputValue };
+    setSavedValues([...savedValues, newValue]);
     setShowInput(false);
     setInputValue('');
-    setShowResult(true);
   };
-   const placeholderDate = calendarDate.toLocaleDateString('en-GB');
+
+  const handleDeleteClick = () => {
+    setSavedValues([]);
+  };
+
+  const placeholderDate = calendarDate.toLocaleDateString('en-GB');
+  
   return (
     <div className="flex flex-col items-center justify-center">
       <Calendar
         value={calendarDate}
         onChange={handleCalendarClick}
+        color='#4e9bff'
       />
       {showInput && (
         <div className="mt-4 flex flex-row items-center space-x-2">
@@ -46,9 +51,23 @@ const MyCalendar = () => {
           </button>
         </div>
       )}
-      {showResult && (
+      {savedValues.length > 0 && (
         <div className="mt-4">
-          <h3>{resultValue}</h3>
+          <h3>Saved Values:</h3>
+          <div className="grid grid-cols-2 gap-4">
+            {savedValues.map((value, index) => (
+              <div key={index} className="border border-gray-300 p-2 rounded-md">
+                <div>{value.date}</div>
+                <div>{value.text}</div>
+              </div>
+            ))}
+          </div>
+          <button
+            onClick={handleDeleteClick}
+            className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+          >
+            Delete All
+          </button>
         </div>
       )}
     </div>
